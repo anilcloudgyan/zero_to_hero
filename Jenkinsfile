@@ -11,7 +11,7 @@ pipeline {
             )
             }
         }
-        stage("Unit Test MVN"){
+        stage("Unit Test maven"){
             steps{
                 script{
                     //sh 'mvn test' 
@@ -19,10 +19,11 @@ pipeline {
                 }
             }
         }
-        stage("Integartion "){
+        stage("Integartion Test maven"){
             steps{
                 script{
-                    sh 'mvn verify -DskipUnittests   '
+                    //sh 'mvn verify -DskipUnittests'
+                    mvnIntergrationTest()
                 }
             }
         }
