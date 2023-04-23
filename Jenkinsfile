@@ -4,7 +4,11 @@ pipeline {
         stage('Git CheckOut'){
             steps{
                 script{
-                    git branch: 'main', credentialsId: 'sonar-api', url: 'https://github.com/anilcloudgyan/mrdevops_java_app.git'
+                    //git branch: 'main', credentialsId: 'sonar-api', url: 'https://github.com/anilcloudgyan/mrdevops_java_app.git'
+                    gitCheckout(
+                        branch: "main",
+                        url:"https://github.com/anilcloudgyan/mrdevops_java_app.git"
+                    )
                 }
             }
         }
